@@ -1,6 +1,8 @@
 <script setup>
+import { ref, onMounted, onBeforeMount, onUnmounted } from 'vue'
+import axios from 'axios'
+
 import HelloWorld from './components/HelloWorld.vue'
-import { ref } from 'vue'
 const msg = 'Hello Vue!'
 const isGestorLoged = 1
 const facturas = ['Factura 1', 'Factura 2', 'Factura 3']
@@ -8,10 +10,33 @@ const url = 'https://ayuntamiento.tech'
 const amount = ref(0)
 
 const input = ref('Gestor')
+
+// sync
+
+// onMounted(() => {
+//   const response = axios
+//     .get('https://jsonplaceholder.typicode.com/todos/1')
+//     .then((data) => console.log(data))
+//   console.log(response.data)
+// })
+
+// onMounted async
+
+// onMounted(async () => {
+//   const response = await axios.get('https://jsonplaceholder.typicode.com/todos/1')
+//   console.log(response.data)
+// })
+
+// onBeforeMount(() => {
+//   console.log('Before mount')
+//   fetch('https://jsonplaceholder.typicode.com/todos/1')
+//     .then((response) => response.json())
+//     .then((json) => console.log(json))
+// })
 </script>
 
 <template>
-  <HelloWorld msg="Bienvenido a Gritrim" />
+  <HelloWorld msg="Bienvenido a Gitrim" />
   <!-- <h1>{{ msg }}</h1> -->
   <!-- <h1 v-text="msg"></h1> -->
   <h1 v-if="isGestorLoged == 1">Gestor Activo</h1>
